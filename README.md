@@ -1,1 +1,1 @@
-# python-basico
+ En las siguientes carpetas, encontrarán los pasos a seguir para adquirir un conocimiento básico del querido lenguaje llamado Python. Adjunto a los pasos, dejaré a su disposición material adicional para que puedan expandir sus conocimientos de una manera más divertida y didáctica. ¡Espero que les guste! :)
