@@ -23,7 +23,7 @@ match serie:
         print("Claro perri con MATCH")
     case "N-03":
         print("Nokia")
-    case _:
+    case _: # Similar al caso default.
         print("El else en match es: case (espacio + guion bajo)")
         
 
