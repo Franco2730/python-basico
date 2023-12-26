@@ -27,7 +27,7 @@ def devolver_distintos(num1, num2, num3):
 #print(devolver_distintos(3, 2, 4)) # min - 2
 #print(devolver_distintos(7, 2, 4)) # el valor intermedio es 4. 
 
-print("---------------------------------------------------------------------------")
+#print("---------------------------------------------------------------------------")
 
 # Ejercicio 2:
 
@@ -53,7 +53,7 @@ def letras_unicas(palabra):
 
 #print(letras_unicas("aadoonddde")) # ['a', 'd', 'e', 'n', 'o'] 
 
-print("---------------------------------------------------------------------------")
+#print("---------------------------------------------------------------------------")
 
 # Ejercicio 3:
 
@@ -79,11 +79,11 @@ def funcion_muchos_argumentos(*args): #De esta manera aceptamos multiples argume
     
     return False
 
-print(funcion_muchos_argumentos(1, 2, 3, 4, 5, 6, 7, 8, 9)) # False
-print(funcion_muchos_argumentos(1, 2, 3, 4, 0, 7, 0, 9)) # False Existen 2 elementos 0. Pero no estan juntos y la condicion AND pide que ambas condiciones se cumplan.
-print(funcion_muchos_argumentos(0, 2, 3, 0, 0, 7, 8, 9, 0)) # True
+#print(funcion_muchos_argumentos(1, 2, 3, 4, 5, 6, 7, 8, 9)) # False
+#print(funcion_muchos_argumentos(1, 2, 3, 4, 0, 7, 0, 9)) # False Existen 2 elementos 0. Pero no estan juntos y la condicion AND pide que ambas condiciones se cumplan.
+#print(funcion_muchos_argumentos(0, 2, 3, 0, 0, 7, 8, 9, 0)) # True
 
-print("---------------------------------------------------------------------------")
+#print("---------------------------------------------------------------------------")
 
 # Ejercicio 4:
 
@@ -96,6 +96,55 @@ primos que encontró.
 Aclaración, por convención el 0 y el 1 no se consideran primos'''
 
 def contar_primos(num):
-    numeros_primos = []
+    numeros_primos = [] # Lista para almacenar los números primos encontrados
 
+    for n in range(2, num): # Iterar desde 2 hasta el número dado (num - 1 ya que range no es inclusivo)
+        es_primo = True # Suponer que n es primo hasta que se demuestre lo contrario
+        
+        # Verificar si n es divisible por algún número entre 2 y la raíz cuadrada de n (redondeado hacia arriba)
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0: # Si n es divisible por i, entonces n no es primo
+                es_primo = False
+                break
+        # Si después de recorrer todos los posibles divisores n sigue siendo primo, agregarlo a la lista
+        if es_primo:
+            numeros_primos.append(n)
+
+    return numeros_primos # Devolver la lista de números primos encontrados
+
+# Llamar a la función contar_primos con el argumento 12 y almacenar el resultado en la variable numeros_primos
+numeros_primos = contar_primos(12)
+
+# Imprimir la lista de números primos encontrados
+# print(numeros_primos)
+
+
+'''Otra alternativa al ejercicio 4:'''
+
+def otros_primos(numero): #Funcion otros_primos
+
+    primos = [2] # Creamos una lista ya que nuestra fn necesita acumular los numeros primos, esta lista comienza con 2 ya que es primo y despues haremos que si es menor a esto, se terminará el programa.
+    iteracion = 3 # Esta variable contendrá el numero que va a ir chequeando desde el cero hasta el valor que necesitemos. Y comienza desde el 3 ya que el 0 y el 1 no entran y el 2 es primo.
+
+    if numero < 2: # Si el numero ingresado es menor a dos..
+        return 0   # ...retorna 0 ya que no hay numero primo
     
+    while iteracion <= numero: # Este bucle principal se ejecuta mientras el número actual de iteración (iteracion) es menor o igual al número dado (numero).
+
+        for n in range(3, iteracion, 2):
+            if iteracion % n == 0: # Nos preguntamos IF iteracion y nos fijamos si su division termina en 0 
+                iteracion += 2 # Con esto nuestro programa avanza y analiza lel siguiente numero, de nuevo, de 2 en 2 ya que no todos son primos.
+                break
+        else: # Acá entramos cuando el numero iterando es primo.
+            primos.append(iteracion) # Acá decimos que a la lista de primos.leAgreguemos(esa iteracion)
+            iteracion += 2 # esto es para que el programa continue y no termine al encontrar el primer numero primo
+
+    print(primos) #Imprimimos toda la lista de primos
+    return len(primos) #Mostramos el length de dicha lista.
+    
+print(otros_primos(12))
+
+
+
+
+
