@@ -37,7 +37,7 @@ todas_oraciones = mi_archivo2.readlines() # ['- Hola, soy la primera linea de co
 
 todas_oraciones = todas_oraciones.pop() # - Oye, oye, no te quejes número 3... Aquí estoy yo.. (recordando que el metodo pop excluye a todas dejando el ultimo elemento.)
 
-print(todas_oraciones) 
+print(todas_oraciones)
 
 
 
