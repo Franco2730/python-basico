@@ -10,17 +10,17 @@ mi_archivo = open(r'C:\Users\54261\OneDrive\Escritorio\Carpetas-proyectos-semana
 
 # Si quisieramos leer únicamente la primer linea deberiamos usar el metodo readline()
 primera_linea = mi_archivo.readline()
-print(primera_linea.upper()) # - Hola, soy la primera linea de codigo !!! y upper seria para que se imprima en mayuscula. 
+#print(primera_linea.upper()) # - Hola, soy la primera linea de codigo !!! y upper seria para que se imprima en mayuscula. 
 
 primera_linea = mi_archivo.readline()
-print(primera_linea) # - Y yo... Bueno, no es tan malo el segundo lugar.
+#print(primera_linea) # - Y yo... Bueno, no es tan malo el segundo lugar.
 
 primera_linea = mi_archivo.readline()
-print(primera_linea) # - Vaya, he quedado en tercer lugar.
+#print(primera_linea) # - Vaya, he quedado en tercer lugar.
 
 
 primera_linea = mi_archivo.readline()
-print(primera_linea) # - Oye, oye, no te quejes número 3... Aquí estoy yo.. 
+#print(primera_linea) # - Oye, oye, no te quejes número 3... Aquí estoy yo.. 
 
 # Importante, en consola siempre se imprimirá todo con un salto de linea y esto es debido a que el editor lee el archivo txt de forma textual, y habiendo una linea debajo de la otra, toma ese "ENTER" como un salto de linea, para corregir esto, de ser necesario, debemos hacer uso del metodo: rstrip():
 # print(primera_linea.rstrip()) => de esa forma, aparecera pegado por debajo (igual que en el archivo txt)
@@ -37,7 +37,7 @@ todas_oraciones = mi_archivo2.readlines() # ['- Hola, soy la primera linea de co
 
 todas_oraciones = todas_oraciones.pop() # - Oye, oye, no te quejes número 3... Aquí estoy yo.. (recordando que el metodo pop excluye a todas dejando el ultimo elemento.)
 
-print(todas_oraciones)
+print(todas_oraciones)#
 
 
 
