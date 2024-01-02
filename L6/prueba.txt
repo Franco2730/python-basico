@@ -1,4 +1,1 @@
-- Hola, soy la primera linea de codigo !!!
-- Y yo... Bueno, no es tan malo el segundo lugar.
-- Vaya, he quedado en tercer lugar.
-- Oye, oye, no te quejes número 3... Aquí estoy yo.. 
+Creo que he borrado todo
