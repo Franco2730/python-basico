@@ -47,3 +47,13 @@ mi_archivo.close()
     print(mi_archivo.read()): Imprime el contenido del archivo leído utilizando el método read() del objeto de archivo.
 
     mi_archivo.close(): Es importante cerrar el archivo después de utilizarlo para liberar los recursos del sistema. En este caso, no está explícitamente cerrado en el código proporcionado, pero es una buena práctica cerrar el archivo manualmente después de su uso, o se puede utilizar un bloque with para asegurar que se cierre automáticamente cuando ya no sea necesario.'''
+
+
+
+'''
+                                Dada la siguiente ruta, ¿qué devolverá os.path.basename(ruta)?
+
+                                ruta = 'C:\\Users\\Desktop\\documento.txt'
+
+                                Devolverá documento.txt ya que es la base
+'''
