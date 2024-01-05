@@ -47,6 +47,84 @@ Sin eso te vas a enredar más rápido de lo que crees y se te va a complicar bas
 - Y, por último, no te frustres si no logras hacerlo o completarlo. Si logras hacer una parte,
 un par de funciones, algunas cosas sí y otras no, está muy bien. Siempre estamos
 aprendiendo y parte de aprender es no saber. 
+
+Mi recomendación es que, ya que empezamos a ampliar nuestro espectro de conocimiento y los proyectos se volverán cada vez más ambiciosos, implementar técnicas que te ayudarán en el proceso de elaboración. Ten en cuenta que, a partir de ahora, los proyectos que te presentaré y los que tendrás en tu día a día, conllevaran una estructura de datos mas compleja y elaborada con lo cual:
+ Te animo a que diagrames los procesos en un papel, el paso a paso de lo que debe realizar tu código. “Yo debo limpiar mi casa si mis amigos hacen mucho desorden”
+
+1. Estado Inicial: "La casa de Franco está limpia"
+   |
+2. Condición: ¿Mis amigos hacen mucho desorden?
+   |
+3. Opción 1: Sí, mis amigos hacen mucho desorden
+   |
+4. Acción: Debo limpiar mi casa
+   |
+5. Resultado Final: "Mi casa está limpia de nuevo"
+
+O también puedes utilizar alguna de estas paginas / programas: (cortesía de ChatGPT)
+
+1.	Draw.io: Es una herramienta en línea gratuita que te permite crear diagramas de manera fácil. Puedes elegir la categoría "Flowchart" para representar tus estructuras de datos o árboles de decisión.
+2.	Lucidchart: Similar a Draw.io, Lucidchart es otra herramienta en línea que te permite crear diagramas de flujo y otros tipos de diagramas de manera colaborativa.
+3.	Microsoft Visio: Si tienes acceso a Microsoft Office, Visio es una opción robusta para crear diagramas profesionales, incluyendo diagramas de estructuras de datos.
+4.	yEd Graph Editor: Es una aplicación de escritorio gratuita que te permite crear fácilmente diagramas, incluyendo diagramas de árboles y estructuras de datos.
+5.	MindMeister: Aunque está diseñado para mapas mentales, también puedes utilizarlo para representar estructuras de datos y relaciones.
 '''
 
+# Importamos los modulos que vamos a necesitar:
+import os                   # Modulo para navegar entre nuestras carpetas
+from pathlib import Path    # El objeto path es esencial para construir rutas
+from os import system       # System nos permite limpiar la pantalla. Es un detalle visual
 
+# Ahora debemos crear en el menu de inicio, este debe hacer:
+# Dar la bienvenida.
+# Inofmrar donde se encuentran los archivos.
+# Luego informar cuantas recetas tenemos.
+# Mostrar el menu.
+
+mi_ruta = Path(Path.home(), "Recetas") # Esta variable contendrá la ruta a nuestra carpeta madre y como segundo parametro, el elemento que queremos detallar. Aquí tendremos la ruta directa a nuestra carpeta Recetas y su contenido.
+
+def contar_recetas(ruta): # Esta función se encargará de contar las recetas. Necesita un parametro que será la ruta 
+    contador = 0          # La variable contador se inicializará en 0 y nos ayudara a llevar la cuenta de las recetas.
+    for txt in Path(ruta).glob("**/*.txt"): # POR cada TXT que haya EN la RUTA y .CUMPLA con ("TODOS LOS QUE TENGAN.txt") vamos a:
+        contador += 1 # pedirle a la variable CONTADOR que, al valor que ya tenga, le sume 1.
+
+    return contador #Luego, simplemente retornamos dicha variable.
+
+# Menu de inicio.
+
+menu = 0 # Acá se guardara la decision del cliente.
+
+if menu == 1:
+    # Mostrar categorias
+    # Elegir categorias
+    # Mostrar recetas
+    # Elegir recetas
+    # Leer recetas
+    # Volver a inicio
+    pass
+elif menu == 2:
+    # Mostrar categorias
+    # Elegir categorias
+    # Crear receta nueva
+    # Volver a inicio
+    pass
+elif menu == 3:
+    # Crear categorias
+    # Volver a inicio
+    pass
+elif menu == 4:
+    # Mostrar categorias
+    # Elegir categorias
+    # Mostrar recetas
+    # Elegir recetas
+    # Eliminar recetas
+    # Volver a inicio
+    pass
+elif menu == 5:
+    # Mostrar categorias
+    # Elegir categorias
+    # Eliminar categorias
+    pass
+elif menu == 6:
+    # Finalizar programa.
+    pass
