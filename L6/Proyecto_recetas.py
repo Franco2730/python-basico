@@ -71,26 +71,56 @@ O también puedes utilizar alguna de estas paginas / programas: (cortesía de Ch
 '''
 
 # Importamos los modulos que vamos a necesitar:
-import os                   # Modulo para navegar entre nuestras carpetas
-from pathlib import Path    # El objeto path es esencial para construir rutas
-from os import system       # System nos permite limpiar la pantalla. Es un detalle visual
+import os  # Modulo para navegar entre nuestras carpetas
+from pathlib import Path  # El objeto path es esencial para construir rutas
+from os import system  # System nos permite limpiar la pantalla. Es un detalle visual
 
 # Ahora debemos crear en el menu de inicio, este debe hacer:
 # Dar la bienvenida.
-# Inofmrar donde se encuentran los archivos.
+# Informar donde se encuentran los archivos.
 # Luego informar cuantas recetas tenemos.
 # Mostrar el menu.
 
-mi_ruta = Path(Path.home(), "Recetas") # Esta variable contendrá la ruta a nuestra carpeta madre y como segundo parametro, el elemento que queremos detallar. Aquí tendremos la ruta directa a nuestra carpeta Recetas y su contenido.
+mi_ruta = Path(Path.home(), "Recetas")  # Esta variable contendrá la ruta a nuestra carpeta madre y como segundo parametro, el elemento que queremos detallar. Aquí tendremos la ruta directa a nuestra carpeta Recetas y su contenido.
 
-def contar_recetas(ruta): # Esta función se encargará de contar las recetas. Necesita un parametro que será la ruta 
-    contador = 0          # La variable contador se inicializará en 0 y nos ayudara a llevar la cuenta de las recetas.
-    for txt in Path(ruta).glob("**/*.txt"): # POR cada TXT que haya EN la RUTA y .CUMPLA con ("TODOS LOS QUE TENGAN.txt") vamos a:
-        contador += 1 # pedirle a la variable CONTADOR que, al valor que ya tenga, le sume 1.
 
-    return contador #Luego, simplemente retornamos dicha variable.
+def contar_recetas(ruta):  # Esta función se encargará de contar las recetas. Necesita un parámetro que será la ruta
+    contador = 0  # La variable contador se inicializará en 0 y nos ayudará a llevar la cuenta de las recetas.
+    for txt in Path(ruta).glob("**/*.txt"):  # POR cada TXT que haya EN la RUTA y .CUMPLA con ("TODOS LOS QUE TENGAN.txt") vamos a:
+        contador += 1  # pedirle a la variable CONTADOR que, al valor que ya tenga, le sume 1.
 
-# Menu de inicio.
+    return contador  # Luego, simplemente retornamos dicha variable.
+
+
+# Menu de inicio, en la siguiente función le daremos la bienvenida al usuario entre otras cosas que detallaremos a continuación.
+def inicio():
+    system('cls')
+    print('*' * 50)
+    print('*' * 5 + " Bienvenido al administrador de recetas " + '*' * 5)
+    print('*' * 50)
+    print('\n')
+    print(f"Las recetas se encuentran en: {mi_ruta}")
+    print(f"Total recetas: {contar_recetas(mi_ruta)}")  # Acá le pasamos por parámetro a mi_ruta ya que pide un parámetro y nosotros necesitamos pasarle esa información.
+
+
+'''En el siguiente punto, debemos mostrarle al usuario todas las opciones y él tendrá que elegir una. Pero como dicho menú debe mostrarse una y otra vez mientras que el usuario no brinde una opción correcta vamos a hacerlo dentro de un loop WHILE'''
+
+eleccion_menu = 'x'
+# En el siguiente loop while decimos: MIENTRAS QUE NO sea un numero (isnumeric) eleccion_menu (lo que haya en esa variable) ( ) OR eleccion_menu (lo que haya en esa varuable) NO ESTE EN EL RANGO DEL (1 al 7) teniendo en cuenta que el segundo parametro no es inclucivo y será en este caso hasta el 6 entonces:...
+while not eleccion_menu.isnumeric() or int(eleccion_menu) not in range(1, 7):
+    print("Elige una opción: ")
+    print('''
+    [1] - Leer receta.
+    [2] - Crear receta nueva.
+    [3] - Crear nueva categoría.
+    [4] - Eliminar receta.
+    [5] - Eliminar categoría.
+    [6] - Salir del programa. ''')
+    
+    eleccion_menu = input()
+
+# inicio()  # Puedes llamar a la función inicio() si deseas ejecutarla al final del script.
+
 
 menu = 0 # Acá se guardara la decision del cliente.
 
